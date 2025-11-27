@@ -1,3 +1,6 @@
+// =======================
+// BÀI 1 - CAROUSEL
+// =======================
 let images = [
   "https://picsum.photos/id/1015/600/350",
   "https://picsum.photos/id/1025/600/350",
@@ -16,7 +19,7 @@ function showSlide() {
 }
 
 function nextSlide() {
-  index = (index + 1) % images.length; 
+  index = (index + 1) % images.length;
   showSlide();
 }
 
@@ -27,14 +30,16 @@ function prevSlide() {
 
 setInterval(nextSlide, 3000);
 
+// =======================
+// BÀI 2 - TODO LIST
+// =======================
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function renderTasks() {
   let list = document.getElementById("todoList");
-  if (!list) return; 
+  if (!list) return;
 
   list.innerHTML = "";
-
   tasks.forEach((task, i) => {
     list.innerHTML += `
       <li>
@@ -51,12 +56,10 @@ function addTask() {
 
   tasks.push(input.value);
   localStorage.setItem("tasks", JSON.stringify(tasks));
-
   input.value = "";
   renderTasks();
 }
 
-// Xóa task
 function deleteTask(i) {
   tasks.splice(i, 1);
   localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -65,6 +68,9 @@ function deleteTask(i) {
 
 renderTasks();
 
+// =======================
+// BÀI 3 - GAME ĐOÁN SỐ
+// =======================
 let number = Math.floor(Math.random() * 100) + 1;
 let tries = 0;
 
