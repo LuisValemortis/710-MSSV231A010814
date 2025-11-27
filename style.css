@@ -1,58 +1,215 @@
-body { text-align: center; font-family: sans-serif; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  padding: 8px 14px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+input, textarea {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+ul li {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
 
 .carousel img {
   width: 90%;
   max-width: 600px;
-  transition: 0.5s;
+  height: auto;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel button {
+  font-size: 24px;
+  padding: 10px 16px;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+  }
+
+  .carousel button {
+    width: 120px;
+  }
+}
+
+#taskInput {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+#todoList {
+  width: 320px;
+  margin: 20px auto;
+  display: grid;
+  gap: 10px;
+}
+
+#todoList li {
+  background: white;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+#todoList button {
+  background: crimson;
+  border-radius: 4px;
+}
+
+#todoList button:hover {
+  background: darkred;
+}
+
+#guess {
+  width: 200px;
+  margin: 10px 0;
+}
+
+#result {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#count {
+  margin-top: 8px;
+  color: #555;
 }
 
 .confetti {
   width: 100px;
   height: 100px;
-  background: gold;
+  margin: 20px auto;
+  background: linear-gradient(45deg, gold, orange, red);
+  border-radius: 50%;
   display: none;
 }
 
 .confetti.show {
   display: block;
-  animation: pop 0.5s infinite alternate;
+  animation: pop 0.4s infinite alternate;
 }
 
 @keyframes pop {
   from { transform: scale(1); }
-  to { transform: scale(1.3); }
+  to { transform: scale(1.3) rotate(20deg); }
 }
 
-
 .about-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
   display: grid;
   grid-template-columns: 150px 1fr;
   gap: 20px;
   align-items: center;
-  justify-content: center;
-  margin-top: 30px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
 }
 
 .avatar {
   width: 150px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 3px solid #007bff;
+}
+
+.info p {
+  margin: 6px 0;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .info p {
+    text-align: center;
+  }
 }
 
 .contact-form {
-  width: 300px;
-  margin: auto;
+  width: 320px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
 }
 
-.contact-form input,
 .contact-form textarea {
-  padding: 8px;
-  font-size: 14px;
+  min-height: 80px;
+  resize: none;
 }
 
-.contact-form button {
-  padding: 10px;
-  cursor: pointer;
+a[href="index.html"] {
+  display: inline-block;
+  margin-top: 25px;
 }
