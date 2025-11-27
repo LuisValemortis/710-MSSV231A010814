@@ -9,18 +9,10 @@
 
 <h2>Carousel</h2>
 
-<div class="carousel-container">
-  <div class="carousel-track" id="carouselTrack">
-    <img src="https://picsum.photos/id/1015/800/400">
-    <img src="https://picsum.photos/id/1025/800/400">
-    <img src="https://picsum.photos/id/1035/800/400">
-    <img src="https://picsum.photos/id/1045/800/400">
-    <img src="https://picsum.photos/id/1055/800/400">
-    <img src="https://picsum.photos/id/1065/800/400">
-  </div>
-
-  <button class="nav prev" onclick="prevSlide()">❮</button>
-  <button class="nav next" onclick="nextSlide()">❯</button>
+<div class="carousel">
+  <button onclick="prevSlide()">❮</button>
+  <img id="slide" src="https://picsum.photos/id/1015/600/350">
+  <button onclick="nextSlide()">❯</button>
 </div>
 
 <script src="js/script.js"></script>
