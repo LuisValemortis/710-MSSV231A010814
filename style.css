@@ -1,0 +1,58 @@
+body { text-align: center; font-family: sans-serif; }
+
+.carousel img {
+  width: 90%;
+  max-width: 600px;
+  transition: 0.5s;
+}
+
+.confetti {
+  width: 100px;
+  height: 100px;
+  background: gold;
+  display: none;
+}
+
+.confetti.show {
+  display: block;
+  animation: pop 0.5s infinite alternate;
+}
+
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.3); }
+}
+
+
+.about-container {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.contact-form {
+  width: 300px;
+  margin: auto;
+  display: grid;
+  gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.contact-form button {
+  padding: 10px;
+  cursor: pointer;
+}
