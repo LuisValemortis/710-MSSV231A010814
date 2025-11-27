@@ -1,6 +1,3 @@
-// =======================
-// BÀI 1 - CAROUSEL
-// =======================
 let images = [
   "https://picsum.photos/id/1015/600/350",
   "https://picsum.photos/id/1025/600/350",
@@ -30,9 +27,6 @@ function prevSlide() {
 
 setInterval(nextSlide, 3000);
 
-// =======================
-// BÀI 2 - TODO LIST
-// =======================
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function renderTasks() {
@@ -68,9 +62,6 @@ function deleteTask(i) {
 
 renderTasks();
 
-// =======================
-// BÀI 3 - GAME ĐOÁN SỐ
-// =======================
 let number = Math.floor(Math.random() * 100) + 1;
 let tries = 0;
 
